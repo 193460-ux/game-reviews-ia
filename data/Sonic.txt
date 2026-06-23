@@ -1,0 +1,20 @@
+Sonic The Hedgehog
+
+Desenvolvedora: Sega
+Lançamento: 1991
+Gênero: Plataforma
+
+Sonic é um jogo de plataforma focado em velocidade e exploração.
+
+O personagem principal é Sonic, um ouriço azul capaz de correr em alta velocidade.
+
+Pontos positivos:
+- Fases rápidas
+- Trilha sonora marcante
+- Personagem icônico
+
+Pontos negativos:
+- Algumas fases difíceis
+- Controle pode ser impreciso em alta velocidade
+
+Nota média dos jogadores: 8.5/10
