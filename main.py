@@ -1,58 +1,14 @@
-from agents.planner import planejar
-from agents.analyst import analisar
-from agents.reviewer import revisar
-from rag.vector_db import adicionar_documento
-import os
+from rag.llm import gerar_resposta
+from agents.retriever import recuperar_contexto
 
-# Carregar arquivos da pasta data
-pasta = "data"
+pergunta = input("Pergunta: ")
 
-for arquivo in os.listdir(pasta):
+contexto = recuperar_contexto(pergunta)
 
-    if arquivo.endswith(".txt"):
+resposta = gerar_resposta(contexto, pergunta)
 
-        caminho = os.path.join(
-            pasta,
-            arquivo
-        )
+print("\nResposta:")
+print(resposta)
 
-        with open(
-            caminho,
-            "r",
-            encoding="utf-8"
-        ) as f:
-
-            texto = f.read()
-
-            adicionar_documento(texto)
-
-print("Documentos carregados!")
-print("=== Game Reviews AI ===")
-
-while True:
-
-    pergunta = input(
-        "\nDigite sua pergunta (ou sair): "
-    )
-
-    if pergunta.lower() == "sair":
-        break
-
-    # Agente Planejador
-    contexto = planejar(pergunta)
-
-    # Agente Analista
-    analise = analisar(
-        pergunta,
-        contexto
-    )
-
-    # Agente Revisor
-    resposta_final = revisar(
-        analise
-    )
-
-    print("\nResposta:")
-    print(resposta_final)
 
 
